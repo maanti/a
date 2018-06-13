@@ -1,0 +1,3 @@
+/home/manti/CLionProjects/algos/algos4/1160/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/manti/CLionProjects/algos/algos4/1160/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/manti/CLionProjects/algos/algos4/1160/cmake-build-debug/CMakeFiles/1160.dir

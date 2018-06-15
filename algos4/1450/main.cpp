@@ -1,54 +1,104 @@
-#include <cstdio>
+/**
+    Algorithms. Module 4.
+    http://acm.timus.ru/problem.aspx?space=1&num=1450
+    @date June 15, 2018
+    @author maanti
+*/
+#include <iostream>
+#include <cmath>
 #include <vector>
-#include <queue>
+#include <algorithm>
+#include <climits>
 
-const int inf = -500*10000;
+using namespace std;
 
-struct node
-{
-    std::vector<std::pair<int, int>> e;
-    int d;
-    int in;
-
-    node() : in(0), d(inf) {}
+struct Edge {
+    int start;
+    int end;
+    int weight;
 };
 
-node nodes[501];
+struct Graph {
+    int verticesNumber, edgesNumber, firstStation, lastStation;
+    struct Edge *edges;
+};
 
-int main()
-{
-    int N, M, S, F;
-    scanf("%d %d", &N, &M);
-    std::queue<node*> q;
+/**
+ * Reads number of vertices, number and direction of edges,
+ * first and last station numbers from stdin and creates a
+ * Graph structure.
+ *
+ * @return Graph structure instance
+*/
+struct Graph *createGraph();
 
-    for(int i = 0; i < M; i++)
-    {
-        int x, y, c;
-        scanf("%d %d %d", &x, &y, &c);
-        nodes[x].e.emplace_back(y, c);
-        nodes[y].in++;
-    }
-    scanf("%d %d", &S, &F);
-    nodes[S].d = 0;
+/**
+ * Implements Bellman-Ford algorithm to find a path with
+ * the maximum weight in the graph.
+ *
+ * @param graph where the search will be performed
+ * @return maximum weight
+*/
+int bellmanFord(struct Graph *graph);
 
-    for(int i = 1; i <= N; i++)
-        if(nodes[i].in == 0)
-            q.push(nodes + i);
-    while(!q.empty())
-    {
-        auto nod = q.front();
-        q.pop();
-        for(auto it = nod->e.begin(); it < nod->e.end(); it++)
-        {
-            nodes[it->first].d = std::max(nodes[it->first].d, nod->d + it->second); // Relaxation
-            nodes[it->first].in--;
-            if(nodes[it->first].in == 0)
-                q.push(nodes + it->first);
+int main() {
+    int result = bellmanFord(createGraph());
+    if (result == INT_MAX)
+        printf("%s", "No solution");
+    else
+        printf("%d", result);
+    return 0;
+}
+
+int bellmanFord(struct Graph *graph) {
+    int weights[graph->verticesNumber];
+    /**
+     * Initializes distances with "Infinity".
+     * Uses INT_MAX because integers are inherently finite
+     * and INT_MAX is the closest to infinity value we can get.
+     * Sets distance to the firstStation to zero.
+     */
+    for (int i = 0; i < graph->verticesNumber; i++)
+        weights[i] = INT_MAX;
+    weights[graph->firstStation] = 0;
+    /**
+     * For every vertex's edge new distance is computed
+     * while there was at least one edge relaxation.
+     * For unreachable vertices distance will remain equal to
+     * INT_MAX.
+     */
+    bool relaxationHappened = false;
+    for (int i = 1; i < graph->verticesNumber; i++) {
+        for (int j = 0; j < graph->edgesNumber; j++) {
+            int fromStation = graph->edges[j].start;
+            int toStation = graph->edges[j].end;
+            int weight = graph->edges[j].weight;
+            if (weights[fromStation] != INT_MAX &&
+                weights[fromStation] + weight < weights[toStation]) {
+                weights[toStation] = weights[fromStation] + weight;
+                relaxationHappened = true;
+            }
+        }
+        if (!relaxationHappened) {
+            break;
         }
     }
-    if(nodes[F].d >= 0)
-        printf("%d\n", nodes[F].d);
-    else
-        printf("No solution\n");
-    return 0;
+    return abs(weights[graph->lastStation]);
+}
+
+struct Graph *createGraph() {
+    auto *graph = new Graph;
+    scanf("%d %d", &graph->verticesNumber, &graph->edgesNumber);
+    graph->edges = new Edge[graph->edgesNumber];
+    for (int i = 0; i < graph->edgesNumber; i++) {
+        scanf("%d %d %d", &graph->edges[i].start, &graph->edges[i].end,
+              &graph->edges[i].weight);
+        graph->edges[i].start--;
+        graph->edges[i].end--;
+        graph->edges[i].weight = -graph->edges[i].weight;
+    }
+    scanf("%d %d", &graph->firstStation, &graph->lastStation);
+    graph->firstStation--;
+    graph->lastStation--;
+    return graph;
 }

@@ -31,16 +31,38 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
               <folding>
-                <element signature="e#268#285#0" expanded="true" />
+                <element signature="e#0#163#0" />
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#2258#2857#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>dest</find>
+      <find>edges_cnt</find>
+      <find>d</find>
+      <find>_</find>
+      <find>INT_MAX</find>
+      <find>graph-&gt;firstStation - 1</find>
+      <find>lastStation</find>
+      <find>endStation</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>end</replace>
+      <replace>edgesNumber</replace>
+      <replace>lastStation</replace>
+      <replace>-INFINITY</replace>
+      <replace>INFINITY</replace>
+      <replace>toStation</replace>
+    </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -58,10 +80,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="5">
     <option name="y" value="26" />
     <option name="width" value="839" />
-    <option name="height" value="1023" />
+    <option name="height" value="1024" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -92,7 +114,7 @@
   </component>
   <component name="RunManager" selected="Application.1450">
     <configuration name="1450" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="1450" TARGET_NAME="1450" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="1450" RUN_TARGET_NAME="1450" />
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="1450" RUN_TARGET_NAME="1450" EXPLICIT_BUILD_TARGET_NAME="all" />
     <list>
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.1450" />
@@ -110,14 +132,16 @@
       <updated>1528716493707</updated>
       <workItem from="1528716495356" duration="298000" />
       <workItem from="1528921949081" duration="2472000" />
+      <workItem from="1529053974681" duration="12304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2770000" />
+    <option name="totallyTimeSpent" value="15074000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="26" width="839" height="1023" extended-state="4" />
+    <frame x="0" y="26" width="839" height="1024" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24907975" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -144,16 +168,23 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="1" lean-forward="true" selection-start-line="10" selection-end-line="63" selection-end-column="1" />
+        <state relative-caret-position="799">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding>
-            <element signature="e#268#285#0" expanded="true" />
+            <element signature="e#0#163#0" />
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#2258#2857#0" />
           </folding>
         </state>
       </provider>
@@ -163,10 +194,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        <state relative-caret-position="1071">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="10" selection-end-line="63" selection-end-column="1" />
           <folding>
-            <element signature="e#268#285#0" expanded="true" />
+            <element signature="e#0#163#0" />
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#2258#2857#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#163#0" />
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#2258#2857#0" />
           </folding>
         </state>
       </provider>

@@ -1,2 +1,2 @@
 # algos
-Tasks for university "Algorithms" course. The conditions of the tasks could be find on http://acm.timus.ru
+Tasks for university "Algorithms" course. The tasks could be find on http://acm.timus.ru
